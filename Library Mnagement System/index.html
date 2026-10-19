@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PageTurner | Online Library Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="#home" class="logo">📚 PageTurner</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+      <button id="loginBtn">Login</button>
+      <button id="registerBtn" class="primary">Register</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">WELCOME TO YOUR DIGITAL BOOKSHELF</p>
+        <h1>Discover Your<br><span>Next Great Read.</span></h1>
+        <p>Explore amazing books, discover new ideas and build your own collection.</p>
+        <a href="#books" class="primary link-btn">Explore Books →</a>
+      </div>
+      <div class="hero-art">
+        <div class="big-book">THE<br>WORLD OF<br><span>BOOKS</span><small>READ • LEARN • GROW</small></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div>📖 <strong>Wide Collection</strong><small>Books for every reader</small></div>
+      <div>🛒 <strong>Easy Shopping</strong><small>Simple cart management</small></div>
+      <div>🔐 <strong>Member Account</strong><small>Register and log in</small></div>
+    </section>
+
+    <section class="books-section" id="books">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Explore Our Books</h2>
+          <p>Find your next favourite book.</p>
+        </div>
+        <input type="search" id="search" placeholder="Search books or authors...">
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-category="All">All Books</button>
+        <button class="filter" data-category="Fiction">Fiction</button>
+        <button class="filter" data-category="Technology">Technology</button>
+        <button class="filter" data-category="Education">Education</button>
+        <button class="filter" data-category="Self-help">Self-help</button>
+      </div>
+
+      <div id="bookGrid" class="book-grid"></div>
+      <p id="emptyMessage" class="empty hidden">No books found.</p>
+    </section>
+
+    <section class="about" id="about">
+      <p class="eyebrow">ABOUT PAGETURNER</p>
+      <h2>Every book opens a new world.</h2>
+      <p>PageTurner is a student project that demonstrates an online library store using HTML, CSS and JavaScript.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo">📚 PageTurner</a>
+    <p>Read more. Learn more. Grow more.</p>
+    <small>© <span id="year"></span> PageTurner | Educational Project</small>
+  </footer>
+
+  <!-- Cart panel -->
+  <div id="overlay" class="overlay hidden"></div>
+  <aside id="cartPanel" class="cart-panel">
+    <div class="panel-heading">
+      <h2>🛒 Your Cart</h2>
+      <button id="closeCart" class="close">×</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <h3>Subtotal: <span id="subtotal">₹0</span></h3>
+      <button id="checkoutBtn" class="primary full">Proceed to Checkout</button>
+      <button id="continueBtn" class="secondary full">Continue Shopping</button>
+    </div>
+  </aside>
+
+  <!-- Login and registration modal -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeAuth" class="close">×</button>
+      <h2 id="authTitle">Login</h2>
+      <p id="authDescription">Welcome back to PageTurner.</p>
+      <form id="authForm">
+        <div id="nameField" class="hidden">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" placeholder="Enter your name">
+        </div>
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" minlength="6" placeholder="At least 6 characters" required>
+        <button id="authSubmit" class="primary full" type="submit">Login</button>
+        <p id="authMessage" class="message"></p>
+      </form>
+      <p class="switch-text"><span id="switchText">New here?</span>
+        <button id="switchAuth" type="button">Create account</button>
+      </p>
+      <small class="note">Demo only. This project does not use a secure server.</small>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
